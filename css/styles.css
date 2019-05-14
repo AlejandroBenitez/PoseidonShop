@@ -15,8 +15,13 @@
 
 .anchoImgCarousel img {
     width: 100%;
-    max-height: 80vh;
+    max-height: 78vh;
     object-fit: cover;
+    
+}
+
+.altoImgCarousel{
+    height: 150px;
 }
 
 .anchoImgCarousel .overlay {
@@ -26,9 +31,8 @@
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: white;    
 }
-
 
 .pimg {
     background-image: url(../assets/img/paralax.jpg);
