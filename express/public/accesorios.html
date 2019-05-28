@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Poseidon Shop</title>
+	<!-- Hojas de estilo, incluidas las de Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">		
+	<!-- Icono de pestaña -->
+	<link rel="icon" type="image/jpg" href="assets/img/Logo.png">
+	<!-- Scripts jQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+	<!-- Scripts personales -->
+	<script type="text/javascript" src="js/index.js"></script>
+	<!-- Script FACEBOOK -->
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3&appId=292321601677280&autoLogAppEvents=1"></script>
+</head>
+<body onload="cargarDatosInicio();">
+	<div id="Cabecera">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1 colorCabecera fixed-top">
+			<a class="navbar-brand" href="http://127.0.0.1:8989/">
+				<img src="assets/img/Logo3.png" id="logo">
+			</a>
+			<button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarColor01"
+			aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarColor01">
+			<ul class="navbar-nav ml-auto d-flex justify-content-center flex-row">
+				<li class="nav-item">
+					<a class="nav-link" href="http://127.0.0.1:8989/tablas">Tablas </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://127.0.0.1:8989/accesorios">Accesorios</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" href="#footer">Contacto</a>
+				</li>
+				<li class="nav-item dropdown dropdown-right">
+					<i class="fa fa-2x fa-user-o nav-link " aria-hidden="true" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="http://127.0.0.1:8989/login">Ingresar</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" data-toggle="modal" data-target="#modalRegistro">Registrarse</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+
+<div style="padding: 3.5rem 1rem;">
+	<!-- FIX para que el fixed-top de la cabecera no tape los articulos -->
+</div>
+
+<!-- REGISTRO -->
+<div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalRegistro">Registro</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-row">
+						<div class="form-group col">
+							<div class="container">
+								<div class="row">
+
+									
+									<div class="input-group input-group-sm">
+										<div class="form-group col">
+											<label for="Nickname">Nickname</label>
+											<input type="text" class="form-control text-center mb-2 ml-1 mr-1" id="Nickname" placeholder="Nickname" aria-describedby="inputGroup-sizing-sm">
+										</div>									
+										<div class="form-group col">
+											<label for="Contraseña">Contraseña</label>
+											<input type="password" class="form-control text-center mb-2 ml-1 mr-1" id="Contraseña" placeholder="Contraseña" aria-describedby="inputGroup-sizing-sm">
+										</div>
+									</div>
+									
+
+									<div class="input-group input-group-sm mb-3">
+										<div class="form-group col">
+											<label for="Nombre">Nombre</label>
+											<input type="text" class="form-control text-center mb-2 ml-1 mr-1" placeholder="Nombre" id="Nombre" aria-label="Nombre" aria-describedby="inputGroup-sizing-sm">
+										</div>	
+										<div class="form-group col">
+											<label for="Apellido">Apellido</label>
+											<input type="text" class="form-control text-center mb-2 ml-1 mr-1" placeholder="Apellido" id="Apellido" aria-label="Apellido" aria-describedby="inputGroup-sizing-sm">
+										</div>
+									</div>	
+
+									<div class="input-group input-group-sm mb-3">
+										<div class="form-group col">
+											<label for="Email">Email</label>
+											<input type="email" class="form-control text-center mb-2 ml-1 mr-1" placeholder="Email" id="Email" aria-label="Email" aria-describedby="inputGroup-sizing-sm">
+										</div>
+									</div>
+
+									<div class="input-group input-group-sm mb-3">
+										<div class="form-group col">
+											<label for="Celular">Celular/Teléfono</label>
+											<input type="number" class="form-control text-center mb-2 ml-1 mr-1" placeholder="Celular/Teléfono" id="Celular" aria-label="Celular" aria-describedby="inputGroup-sizing-sm">
+										</div>
+									</div>
+									<div class="row">
+										<label for="Sexo">Sexo</label>
+
+										<div class="form-check form-check-inline col">
+											<input class="form-check-input" type="radio" name="Masculino" id="Masculino" value="Masculino">
+											<label class="form-check-label" for="Masculino">Masculino</label>
+										</div>
+										<div class="form-check form-check-inline col">
+											<input class="form-check-input" type="radio" name="Femenino" id="Femenino" value="Femenino">
+											<label class="form-check-label" for="Femenino">Femenino</label>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>            
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-warning">REGISTRARSE</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ARTICULOS -->
+
+<div class="container">
+	<div class="row">
+
+
+		<!-- ARTICULO 1 -->
+		<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+			<div class="card m-1 CustomBorder">
+				<h3 class="card-header d-flex justify-content-center" id="Titulo1"></h3>
+				<h5><span class="badge badge-info m-1">NUEVO</span></h5>
+				<!-- CAROUSEL DE IMAGENES -->
+				<div id="articulo1" class="carousel slide p-1 m-1" data-ride="carousel" data-interval="false">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="assets/img/Leash1.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/Leash2.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#articulo1" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#articulo1" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<!-- FIN DEL CAROUSEL -->
+				<!-- DESCRIPCION -->
+				<div class="card-body">
+					<p class="card-text"></p>
+					<p id="Des1"></p>
+					<button onclick="ReadMore('Des1', id)" id="btnRM1" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Leer Más</button>
+				</div>						
+				<!-- PRECIO -->
+				<div class="card-body">
+					<p class="card-text" id="Precio1">
+						
+					</p>
+				</div>
+				<!-- BOTON VER -->
+				<div class="card-body">
+					<a href="/article" class="btn btn-info btn-sm colorBoton d-flex justify-content-center">VER</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- ARTICULO 2 -->
+		<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+			<div class="card m-1 CustomBorder">
+				<!-- TITULO -->
+				<h3 class="card-header d-flex justify-content-center" id="Titulo2"></h3>
+				<h5><span class="badge badge-info m-1">NUEVO</span></h5>
+				<!-- CAROUSEL DE IMAGENES -->
+				<div id="articulo2" class="carousel slide p-1 m-1" data-ride="carousel" data-interval="false">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="assets/img/Leash1.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/Leash2.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#articulo2" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#articulo2" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<!-- FIN DEL CAROUSEL -->
+				<!-- DESCRIPCION -->
+				<div class="card-body">
+					<p class="card-text"></p>
+					<p id="Des2"></p>
+					<button onclick="ReadMore('Des2', id)" id="btnRM2" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Leer Más</button>
+				</div>						
+				<!-- PRECIO -->
+				<div class="card-body">
+					<p class="card-text" id="Precio2">
+						
+					</p>
+				</div>
+				<!-- BOTON VER -->
+				<div class="card-body">
+					<a href="/article" class="btn btn-info btn-sm colorBoton d-flex justify-content-center">VER</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- ARTICULO 3 -->
+		<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+			<div class="card m-1 CustomBorder">
+				<!-- TITULO -->
+				<h3 class="card-header d-flex justify-content-center" id="Titulo3"></h3>
+				<h5><span class="badge badge-info m-1">NUEVO</span></h5>
+				<!-- CAROUSEL DE IMAGENES -->
+				<div id="articulo3" class="carousel slide p-1 m-1" data-ride="carousel" data-interval="false">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="assets/img/Leash1.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/Leash2.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#articulo3" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#articulo3" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<!-- FIN DEL CAROUSEL -->
+				<!-- DESCRIPCION -->
+				<div class="card-body">
+					<p class="card-text"></p>
+					<p id="Des3"></p>
+					<button onclick="ReadMore('Des3', id)" id="btnRM3" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Leer Más</button>
+				</div>						
+				<!-- PRECIO -->
+				<div class="card-body">
+					<p class="card-text" id="Precio3">
+						
+					</p>
+				</div>
+				<!-- BOTON VER -->
+				<div class="card-body">
+					<a href="/article" class="btn btn-info btn-sm colorBoton d-flex justify-content-center">VER</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- ARTICULO 4 -->
+		<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+			<div class="card m-1 CustomBorder">
+				<!-- TITULO -->
+				<h3 class="card-header d-flex justify-content-center" id="Titulo4"></h3>
+				<h5><span class="badge badge-info m-1">NUEVO</span></h5>
+				<!-- CAROUSEL DE IMAGENES -->
+				<div id="articulo4" class="carousel slide p-1 m-1" data-ride="carousel" data-interval="false">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="assets/img/Leash1.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/Leash2.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#articulo4" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#articulo4" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<!-- FIN DEL CAROUSEL -->
+				<!-- DESCRIPCION -->
+				<div class="card-body">
+					<p class="card-text"></p>
+					<p id="Des4"></p>
+					<button onclick="ReadMore('Des4', id)" id="btnRM4" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Leer Más</button>
+				</div>						
+				<!-- PRECIO -->
+				<div class="card-body">
+					<p class="card-text" id="Precio4">
+						
+					</p>
+				</div>
+				<!-- BOTON VER -->
+				<div class="card-body">
+					<a href="/article" class="btn btn-info btn-sm colorBoton d-flex justify-content-center">VER</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- ARTICULO 5 -->
+		<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+			<div class="card m-1 CustomBorder">
+				<h3 class="card-header d-flex justify-content-center" id="Titulo5"></h3>
+				<h5><span class="badge badge-info m-1">NUEVO</span></h5>
+				<!-- CAROUSEL DE IMAGENES -->
+				<div id="articulo5" class="carousel slide p-1 m-1" data-ride="carousel" data-interval="false">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="assets/img/Leash1.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/Leash2.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#articulo5" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#articulo5" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<!-- FIN DEL CAROUSEL -->
+				<!-- DESCRIPCION -->
+				<div class="card-body">
+					<p class="card-text"></p>
+					<p id="Des5"></p>
+					<button onclick="ReadMore('Des5', id)" id="btnRM5" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Leer Más</button>
+				</div>						
+				<!-- PRECIO -->
+				<div class="card-body">
+					<p class="card-text" id="Precio5">
+						
+					</p>
+				</div>
+				<!-- BOTON VER -->
+				<div class="card-body">
+					<a href="/article" class="btn btn-info btn-sm colorBoton d-flex justify-content-center">VER</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- ARTICULO 6 -->
+		<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+			<div class="card m-1 CustomBorder">
+				<!-- TITULO -->
+				<h3 class="card-header d-flex justify-content-center" id="Titulo6"></h3>
+				<h5><span class="badge badge-info m-1">NUEVO</span></h5>
+				<!-- CAROUSEL DE IMAGENES -->
+				<div id="articulo6" class="carousel slide p-1 m-1" data-ride="carousel" data-interval="false">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="assets/img/Leash1.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/Leash2.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#articulo6" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#articulo6" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<!-- FIN DEL CAROUSEL -->
+				<!-- DESCRIPCION -->
+				<div class="card-body">
+					<p class="card-text"></p>
+					<p id="Des6"></p>
+					<button onclick="ReadMore('Des6', id)" id="btnRM6" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Leer Más</button>
+				</div>						
+				<!-- PRECIO -->
+				<div class="card-body">
+					<p class="card-text" id="Precio6">
+						
+					</p>
+				</div>
+				<!-- BOTON VER -->
+				<div class="card-body">
+					<a href="/article" class="btn btn-info btn-sm colorBoton d-flex justify-content-center">VER</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- ARTICULO 7 -->
+		<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+			<div class="card m-1 CustomBorder">
+				<!-- TITULO -->
+				<h3 class="card-header d-flex justify-content-center" id="Titulo7"></h3>
+				<h5><span class="badge badge-info m-1">NUEVO</span></h5>
+				<!-- CAROUSEL DE IMAGENES -->
+				<div id="articulo7" class="carousel slide p-1 m-1" data-ride="carousel" data-interval="false">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="assets/img/Leash1.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/Leash2.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#articulo7" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#articulo7" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<!-- FIN DEL CAROUSEL -->
+				<!-- DESCRIPCION -->
+				<div class="card-body">
+					<p class="card-text"></p>
+					<p id="Des7"></p>
+					<button onclick="ReadMore('Des7', id)" id="btnRM7" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Leer Más</button>
+				</div>						
+				<!-- PRECIO -->
+				<div class="card-body">
+					<p class="card-text" id="Precio7">
+						
+					</p>
+				</div>
+				<!-- BOTON VER -->
+				<div class="card-body">
+					<a href="/article" class="btn btn-info btn-sm colorBoton d-flex justify-content-center">VER</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- ARTICULO 8 -->
+		<div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+			<div class="card m-1 CustomBorder">
+				<!-- TITULO -->
+				<h3 class="card-header d-flex justify-content-center" id="Titulo8"></h3>
+				<h5><span class="badge badge-info m-1">NUEVO</span></h5>
+				<!-- CAROUSEL DE IMAGENES -->
+				<div id="articulo8" class="carousel slide p-1 m-1" data-ride="carousel" data-interval="false">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="assets/img/Leash1.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+						<div class="carousel-item">
+							<img src="assets/img/Leash2.jpg" class="d-block w-100 altoImgCarousel" alt="Tabla">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#articulo8" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#articulo8" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<!-- FIN DEL CAROUSEL -->
+				<!-- DESCRIPCION -->
+				<div class="card-body">
+					<p class="card-text"></p>
+					<p id="Des8"></p>
+					<button onclick="ReadMore('Des8', id)" id="btnRM8" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Leer Más</button>
+				</div>						
+				<!-- PRECIO -->
+				<div class="card-body">
+					<p class="card-text" id="Precio8">
+						
+					</p>
+				</div>
+				<!-- BOTON VER -->
+				<div class="card-body">
+					<a href="/article" class="btn btn-info btn-sm colorBoton d-flex justify-content-center">VER</a>
+				</div>
+			</div>
+		</div>
+
+		
+
+	</div>
+</div>
+
+<!-- FOTO PARALAX -->
+
+<div class="pimg">
+
+</div>
+
+
+<!-- Footer -->
+
+<footer class="page-footer font-small stylish-color-dark pt-4" id="footer">
+
+	<!-- Footer Links -->
+	<div class="container text-center text-md-left">
+
+		<!-- Grid row -->
+		<div class="row d-flex justify-content-center">
+
+			<div class="d-flex align-self-center">
+				<div class="fb-like" data-href="https://www.facebook.com/PoseidonSurfUY/" data-width="" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+			</div>
+
+			<!-- Grid column -->
+			<div class="col-sm-12 col-md-6 mx-auto">
+
+				<!-- Content -->
+				<h5 class="font-weight-bold text-uppercase mt-3 mb-4">poseidon surf shop</h5>
+				<p>Nuestra marca personal se caracteriza por vender cosas de calidad, siempre queremos lo mejor para nuestros clientes y usuarios, buscamos estar en constante cambio y renovación.
+					Nos dedicamos a la venta de tablas de Surf y artículos relacionados con este hermoso deporte.
+					No te pierdas de ser parte de nuestra comunidad, siempre en constante desarrollo e innovando con ideas frescas.
+				Participa, descubre y aporta.</p>
+			</div>
+			<!-- Grid column -->
+
+			<hr class="clearfix w-100 d-md-none">
+
+			<!-- Grid column -->
+			<div class="col-md-2 mx-auto">
+
+				<!-- Links -->
+				<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+				<ul class="list-unstyled">
+					<li>
+						<a href="https://www.facebook.com/PoseidonSurfUY/">Facebook</a>
+					</li>
+					<li>
+						<a href="https://www.mercadolibre.com.uy/perfil/POSEIDONSURFOFICIAL">MercadoLibre</a>
+					</li>
+					<li>
+						<a href="https://www.instagram.com/poseidonsurfshopok/">Instagram</a>
+					</li>
+
+				</ul>
+
+			</div>
+
+			<!-- Grid column -->
+
+		</div>
+		<!-- Grid row -->
+
+	</div>
+	<!-- Footer Links -->
+
+
+
+	<hr>
+
+	
+
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3">© 2019 Copyright:
+		<a href="https://mdbootstrap.com/education/bootstrap/"> poseidonshop.com</a>
+	</div>
+	<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
