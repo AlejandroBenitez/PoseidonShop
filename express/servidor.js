@@ -1,32 +1,22 @@
 const express = require('express')
 const path    = require("path");
-const app = express()
+const app = express();
 
-app.use(express.static("public"));
+// Settings
+app.set('port', process.env.PORT || 3000);
 
-app.get('/', (req, res) => {
-	res.sendFile (path.join(__dirname + '/public/index.html'))
-})
+// Routes
+// import routes
+const customerRoutes = require('./routes/index');
+app.use('/', customerRoutes);
 
-app.get('/tablas', (req, res) => {
-	res.sendFile(path.join(__dirname, '/public/tablas.html'))
-})
-
-app.get('/accesorios', (req, res) => {
-	res.sendFile(path.join(__dirname, '/public/accesorios.html'))
-})
-
-app.get('/articulos', (req, res) => {
-	res.sendFile(path.join(__dirname, '/public/articulos.html'))
-})
-
-app.get('/login', (req, res) => {
-	res.sendFile(path.join(__dirname, '/public/login.html'))
-})
-
-app.get('/producto', (req, res) => {
-	res.sendFile(path.join(__dirname, '/public/producto.html'))
-})
+//static files
+app.use(express.static(path.join(__dirname,'public')));
 
 
-app.listen(8989)
+// starting server
+const port = app.get('port');
+
+app.listen(port,()=>{
+    console.log(`Server on port ${port}`);
+});
